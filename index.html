@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Github</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style -->
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Login Page -->
+    <section class="w-[520px] mx-auto shadow mt-[60px] p-[32px]">
+        <div class="">
+            <div class="flex flex-col items-center">
+                <img class="w-[100px] mb-[24px]" src="./assets/github-logo.png" alt="">
+                <h2 class="font-semibold text-[24px] text-[#1F2937]">Github Issue Tracker</h2>
+                <p class="text-[#64748B]">Sign in to manage your issues</p>
+            </div>
+
+            <div class="mt-[24px]">
+                <fieldset class="fieldset">
+                    <label class="label">Email</label>
+                    <input type="email" class="input w-full" placeholder="Email" />
+                    <br>
+                    <label class="label">Password</label>
+                    <input type="password" class="input w-full" placeholder="Password" />
+                    <button class="btn btn-primary mt-6 mb-6">Sign In</button>
+                </fieldset>
+            </div>
+
+            <div class="flex items-center w-full mb-6">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="text-[#1F2937] mx-2">OR</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <div class="text-center">
+                <p class="mb-2 text-[14px] text-[#64748B]">Demo Credentials:</p>
+                <div class="p-6 bg-[#1f293714] rounded-xl">
+                    <p class="font-semibold">Username: <span class="font-normal">admin</span></p>
+                    <p class="font-semibold">Password: <span class="font-normal">admin123</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
