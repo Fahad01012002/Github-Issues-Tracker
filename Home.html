@@ -47,9 +47,9 @@
 
     <section class="bg-base-100 mb-[16px] p-[24px] w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl">
         <div class="flex gap-3">
-            <button class="btn btn-outline btn-primary btn-active">All</button>
-            <button class="btn btn-outline btn-primary">Open</button>
-            <button class="btn btn-outline btn-primary">Closed</button>
+            <button id="btn-all" onclick="loadCards() , btnActive('btn-all')" class="btn btn-outline btn-primary btn-active">All</button>
+            <button onclick="btnActive('btn-open')" id="btn-open" class="btn btn-outline btn-primary">Open</button>
+            <button onclick="btnActive('btn-closed')" id="btn-closed" class="btn btn-outline btn-primary">Closed</button>
         </div>
     </section>
 
@@ -59,7 +59,7 @@
             <div class="flex gap-3">
                 <img class="w-[50px]" src="./assets/Aperture.png" alt="">
                 <div class="flex flex-col">
-                    <h2 class="font-semibold text-[20px]"><span>0 </span>Issues</h2>
+                    <h2 class="font-semibold text-[20px]"><span id="total-card">0 </span>   Issues</h2>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
@@ -78,57 +78,14 @@
 
         <section class="p-[24px] border-t-gray-300">
 
-            <div class="grid grid-cols-4 p-[16px] gap-2 ">
-                <div class="card shadow-[0_5px_20px_rgba(0,0,0,0.08)] p-[16px] border-[#00A96E]  border-[#A855F7] border-t-4 border-l-0 border-b-0 border-r-0">
-                    <div class="">
-                        <div class="flex justify-between mb-[12px]">
-                            <div class="flex">
-                                <img src="./assets/Open-Status.png" alt="">
-                                <img src="./assets/Closed- Status .png" alt="">
-                            </div>
-                            <div class="">
-                                <span
-                                    class="font-medium text-[12px] text-[#EF4444] bg-[#FEECEC] py-1 px-5 rounded-full">HIGH</span>
-                                <span
-                                    class="font-medium text-[12px] text-[#F59E0B] bg-[#FFF6D1] py-1 px-5 rounded-full">MEDIUM</span>
-                                <span
-                                    class="font-medium text-[12px] text-[#9CA3AF] bg-[#EEEFF2] py-1 px-5 rounded-full">LOW</span>
-                            </div>
-                        </div>
-
-
-                        <div class="">
-                            <h2 class="font-semibold text-[14px] text-[#1F2937] mb-[8px]">Fix navigation menu on mobile
-                                devices</h2>
-                            <p class="text-[12px] text-[#64748B] mb-[12px]">The navigation menu doesn't collapse
-                                properly on mobile devices...</p>
-                            <div class="mb-[16px]">
-                                <span
-                                    class="font-medium text-[12px] text-[#EF4444] border border-[#FECACA] bg-[#FEECEC] py-1 px-5 rounded-full"><i
-                                        class="fa-solid fa-bug"></i> BUG</span>
-                                <span
-                                    class="font-medium text-[12px] text-[#D97706] border border-[#FDE68A] bg-[#FFF8DB] py-1 px-5 rounded-full"><i
-                                        class="fa-solid fa-location-crosshairs"></i> HELP WANTED</span>
-                                <span
-                                    class="font-medium text-[12px] text-[#00A96E] border border-[#BBF7D0] bg-[#DEFCE8] py-1 px-5 rounded-full"><i
-                                        class="fa-regular fa-star"></i> ENHANCEMENT</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-b-gray-300 border-t-0 border-l-0 border-r-0"></div>
-
-                    <div class="p-[16px]">
-                        <p class="text-[12px] text-[#64748B]">#1 by john_doe</p>
-                        <p class="text-[12px] text-[#64748B]">1/15/2024</p>
-                    </div>
-                </div>
+            <div id="card-container" class="grid grid-cols-4 p-[16px] gap-4 ">
+                
             </div>
 
         </section>
     </section>
 
-
+    <script src="./Script/home.js"></script>
 </body>
 
 </html>
