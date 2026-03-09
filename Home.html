@@ -47,19 +47,25 @@
 
     <section class="bg-base-100 mb-[16px] p-[24px] w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl">
         <div class="flex gap-3">
-            <button id="btn-all" onclick="loadCards() , btnActive('btn-all')" class="btn btn-outline btn-primary btn-active">All</button>
+            <button id="btn-all" onclick="loadCards() , btnActive('btn-all')"
+                class="btn btn-outline btn-primary btn-active">All</button>
             <button onclick="btnActive('btn-open')" id="btn-open" class="btn btn-outline btn-primary">Open</button>
-            <button onclick="btnActive('btn-closed')" id="btn-closed" class="btn btn-outline btn-primary">Closed</button>
+            <button onclick="btnActive('btn-closed')" id="btn-closed"
+                class="btn btn-outline btn-primary">Closed</button>
         </div>
     </section>
 
+    <section id="spinner" class="flex justify-center items-center py-10 hidden">
+        <span class="loading loading-bars loading-xl"></span>
+    </section>
 
-    <section class="bg-base-100 w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl ">
+
+    <section id="card-section" class="bg-base-100 w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl ">
         <section class="flex justify-between items-center p-[24px]">
             <div class="flex gap-3">
                 <img class="w-[50px]" src="./assets/Aperture.png" alt="">
                 <div class="flex flex-col">
-                    <h2 class="font-semibold text-[20px]"><span id="total-card">0 </span>   Issues</h2>
+                    <h2 class="font-semibold text-[20px]"><span id="total-card">0 </span> Issues</h2>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
@@ -79,11 +85,28 @@
         <section class="p-[24px] border-t-gray-300">
 
             <div id="card-container" class="grid grid-cols-4 p-[16px] gap-4 ">
-                
+
             </div>
 
         </section>
     </section>
+
+
+    <!-- You can open the modal using ID.showModal() method -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box p-6 rounded-xl">
+            <div id="detail-container" class=" rounded-xl">
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                        class="btn btn-primary rounded-xl">close</button>
+                </form>
+            </div>
+        </div>
+
+    </dialog>
 
     <script src="./Script/home.js"></script>
 </body>
