@@ -73,10 +73,8 @@ const displayCardDetails = (data, labelHTML, badge) => {
 
         </div>
     `;
-
     my_modal_5.showModal();
 };
-
 
 const loadCards = () => {
     manageSpinner(true);
@@ -150,7 +148,6 @@ const displayCard = (Data) => {
             `
         });
 
-
         const cardDiv = document.createElement('div');
         cardDiv.innerHTML = `
             <div class="card shadow-[0_5px_20px_rgba(0,0,0,0.08)] p-[16px] ${borderColor}   border-t-4 border-l-0 border-b-0 border-r-0 h-full onclick('my_modal_3.showModal()')">
@@ -194,8 +191,6 @@ const displayCard = (Data) => {
     totalIssues();
 };
 
-
-
 document.getElementById('btn-open').addEventListener('click', () => {
     manageSpinner(true);
     const openData = allData.filter(el => el.status === 'open');
@@ -219,9 +214,7 @@ const showValue = () => {
         .then(Data => displayCard(Data.data));
 }
 
-
 loadCards();
-
 
 const totalIssues = () => {
     const totalCard = cardContainer.children.length;
@@ -238,5 +231,3 @@ const btnActive = (id) => {
     const target = document.getElementById(id);
     target.classList.add('btn-active');
 }
-
-
