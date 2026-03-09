@@ -33,12 +33,12 @@
 
     <!-- navbar section -->
     <section class="bg-base-100 shadow-sm mb-[60px]">
-        <div class="flex justify-between navbar w-11/12 mx-auto">
+        <div class="flex flex-col md:flex-row justify-between navbar w-11/12 mx-auto">
             <div class="flex justify-between items-center gap-3">
-                <img class="w-[50px]" src="./assets/github-logo.png" alt="">
-                <h2 class="font-semibold text-[24px] text-[#1F2937]">Github Issues Tracker</h2>
+                <img class="w-[30px] md:w-[50px]" src="./assets/github-logo.png" alt="">
+                <h2 class="font-semibold text-[16px] md:text-[24px] text-[#1F2937]">Github Issues Tracker</h2>
             </div>
-            <div class="">
+            <div class="mt-[20px]">
                 <input id="input" type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
                 <button id="search-btn" onclick="showValue('search-btn')" class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issues</button>
             </div>
@@ -46,7 +46,7 @@
     </section>
 
     <section class="bg-base-100 mb-[16px] p-[24px] w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl">
-        <div class="flex gap-3">
+        <div class="flex justify-center md:justify-normal gap-3">
             <button id="btn-all" onclick="loadCards() , btnActive('btn-all')"
                 class="btn btn-outline btn-primary btn-active">All</button>
             <button onclick="btnActive('btn-open')" id="btn-open" class="btn btn-outline btn-primary">Open</button>
@@ -62,8 +62,8 @@
 
     <section id="card-section" class="bg-base-100 w-11/12 mx-auto shadow-[0_5px_20px_rgba(0,0,0,0.08)] rounded-xl ">
         <section class="flex justify-between items-center p-[24px]">
-            <div class="flex gap-3">
-                <img class="w-[50px]" src="./assets/Aperture.png" alt="">
+            <div class="flex justify-center items-center gap-3">
+                <img class="w-[30px] h-[40px] md:w-[50px]" src="./assets/Aperture.png" alt="">
                 <div class="flex flex-col">
                     <h2 class="font-semibold text-[20px]"><span id="total-card">0 </span> Issues</h2>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
@@ -84,7 +84,7 @@
 
         <section class="p-[24px] border-t-gray-300">
 
-            <div id="card-container" class="grid grid-cols-4 p-[16px] gap-4 ">
+            <div id="card-container" class="space-y-4 md:grid grid-cols-4 p-[16px] gap-4 ">
 
             </div>
 
