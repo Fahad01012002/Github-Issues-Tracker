@@ -32,8 +32,8 @@ const displayCardDetails = (data, labelHTML, badge) => {
         </h3>
 
         <div class="flex items-center gap-3  mb-[24px]">
-        <span class="font-medium text-[12px] text-white bg-[#00A96E] py-[2px] px-[12px] rounded-full">
-            ${data.status}ed
+        <span class="font-medium text-[12px] text-white ${data.status === 'open' ? 'bg-[#00A96E]' : 'bg-[#A855F7]'} py-[2px] px-[13px] rounded-xl">
+            ${data.status === 'open' ? 'Opened' : 'Closed'}
         </span>
 
         <span class="text-[12px] text-[#64748B]">
@@ -77,43 +77,6 @@ const displayCardDetails = (data, labelHTML, badge) => {
     my_modal_5.showModal();
 };
 
-// const loadCardDetail = (id, icon, labelHTML, badge) => {
-//     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(Data => displayCardDetails(Data.data, icon, labelHTML , badge));
-// };
-
-
-// const displayCardDetails = (data , icon, labelHTML , badge => {
-
-//     detailContainer.innerHTML = `
-//         <h3 class="text-[24px] text-[#1F2937] font-bold mb-[8px]">${data.title}</h3>
-//             <span class="font-medium text-[12px] text-white bg-[#00A96E] py-[6px] px-[8px] rounded-xl">${data.status}</span>
-//             <span class="text-[12px] text-[#64748B]">Opened by ${data.assignee}</span>
-//             <span class="text-[12px] text-[#64748B]">${data.updatedAt}</span>
-
-//             <div class="mb-[16px] flex flex-wrap gap-3">
-//                 ${labelHTML}
-//             </div>
-//             <p class="text-[#64748B] mb-[24px]">${data.description}</p>
-//             <div class="">
-//                 <div class="">
-//                     <p class="text-[#64748B]">Assignee:</p>
-//                     <h2 class="font-semibold text-[#1F2937]">${data.assignee}</h2>
-//                 </div>
-//                 <div class="">
-//                     <p class="text-[#64748B]">Priority:</p>
-//                     <div>
-//                         <span
-//                             class="font-medium text-[12px] ${badge} py-1 px-5 rounded-full">${element.priority.toUpperCase()}</span>
-//                     </div>
-//                 </div>
-//             </div>
-//     `
-//     my_modal_5.showModal();
-
-// });
 
 const loadCards = () => {
     manageSpinner(true);
@@ -222,7 +185,7 @@ const displayCard = (Data) => {
         `
         cardContainer.appendChild(cardDiv);
         cardDiv.addEventListener('click', () => {
-            loadCardDetail(element.id , labelHTML , badgeClass);
+            loadCardDetail(element.id, labelHTML, badgeClass);
         });
 
     });
@@ -245,7 +208,16 @@ document.getElementById('btn-closed').addEventListener('click', () => {
     displayCard(closeData);
 });
 
+const showValue = () => {
+    manageSpinner(true);
+    const input = document.getElementById('input').value;
 
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${input}`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(Data => displayCard(Data.data));
+}
 
 
 loadCards();
@@ -258,7 +230,6 @@ const totalIssues = () => {
 
 const btnActive = (id) => {
     const buttonActive = document.querySelectorAll('.btn');
-    console.log(buttonActive);
 
     buttonActive.forEach(btn => {
         btn.classList.remove('btn-active');
